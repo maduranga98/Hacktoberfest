@@ -1,0 +1,142 @@
+#include<stdio.h>
+struct books{
+	int itid;
+	char title[20];
+	char author[20];
+	float price;
+
+};
+struct books items[5]={{101,"ICT","R.K.A.S.U.Gunarathna",1000.00},
+						{102,"Basic Maths","S.M.Y.Bandara",750.25},
+						{103,"Physis","A.B.C.Sumanadasa",500.00},
+						{104,"Chemistary","C.M.Y.K.Perera",690.00},
+						{105,"General English","A.Soma",290.00}};
+
+
+int main(){
+	int a, n, j, i, l, z, o;
+	int k; 
+	float y=0, total=0;;
+	int x[]={};
+	char b;
+	top:
+		// Menu of the cart
+	printf("\t\t Welcome the book shop");
+	printf("\n\t\t ---------------------");
+	printf("\n1.View the list");
+	printf("\n2.Search the books");
+	printf("\n3.View the cart");
+	printf("\n4.Calculate the bill");
+	printf("\n5.Quit");
+
+	printf("\n\nEnter your choice:-->");
+	scanf("%d",&a);
+// the list
+	if(a==1){
+		printf("\n1.View the list");
+		printf("\n===================");	
+		printf("\n\t-----------------------------------------------------------------------");
+		printf("\n\t|NO.|\t\tNAME|\t\t\t\tAUTHOR|\t\tPRICE|");
+		printf("\n\t-----------------------------------------------------------------------");
+		for(i=0;i<5;i++){
+			printf("\n\t%d \t%s \t\t\t%s \tRS:%2f\n",items[i].itid,items[i].title,items[i].author,items[i].price);
+			printf("\n\t-----------------------------------------------------------------------");
+}
+	
+		printf("\n\nTo select the book enter 'a' and back to menu enter 'm'-->:");
+		scanf("%s",&b);
+		if(b=='m'){
+            goto top;}
+		if (b=='a'){
+		while(b=='a'){
+		printf("\nEnter you selected book number:-");
+		scanf("%d",&x[k]);
+		k=k+1;
+		printf("\nTo select the book enter 'a' or back to menu enter 'm':-->");
+		scanf("%s",&b);
+		if(b=='m'){
+            goto top;}}}}
+            
+            
+            
+    //searching section
+	else if(a==2){
+		printf("\n2.Search the books");
+		printf("\n===================");	
+		printf("\n\nEnter the iteams you want to search:-\t");
+		scanf("%d",&z);
+		
+		for(j=0;j<5;j++){
+			if(z==items[j].itid){
+				printf("\n\t-------------------------------------------------------------------------------");
+				printf("\n\t|%d \t|%s \t\t\t|%s \t|RS:%2f|\n",items[j].itid,items[j].title,items[j].author,items[j].price);
+				printf("\t-------------------------------------------------------------------------------");
+
+		}}
+		
+		printf("\nBack to menu enter 'm':-->");
+		scanf("%s",&b);
+		if(b=='m'){
+            goto top;}
+	}
+	
+	
+	
+	
+	
+// to view the cart
+//problem--> there is the 1st iteam of the list is display as 0
+	else if(a==3){
+		printf("\n3.View the cart");
+		printf("\n===================");	
+		printf("\n\nThe iteams you selected");
+		//n=sizeof(x)/sizeof(int);
+		printf("\n\nNo.of books you selected:%d",k);
+		printf("\n\nThe iteams you're selected:-");
+		for(j=0;j<k;j++){
+		printf("\n%d",x[j]);
+		}
+		printf("\n\nBack to menu enter 'm':");
+		scanf("%s",&b);
+		if(b=='m'){
+            goto top;
+		}}
+		
+		
+		
+		
+		
+		//calculation section
+	else if(a==4){
+	printf("\n4.Calculate the bill");
+	printf("\n===================");	
+
+	printf("\n\t-----------------------------------------------------------------------");
+	printf("\n\t|NO.|\t\tNAME|\t\t\t\tAUTHOR|\t\tPRICE|");
+	printf("\n\t-----------------------------------------------------------------------");
+	for(l=0;l<k;l++){
+		if(x[l]=items[l].itid){
+			y=items[l].price;
+			total=total+y;
+			printf("\n\t%d \t%s \t\t\t%s \tRS:%2f\n",items[l].itid,items[l].title,items[l].author,items[l].price);
+			printf("\n\t-----------------------------------------------------------------------");
+
+		}}
+		
+	printf("\nValue of the cart:-->Rs.%f",total);
+	printf("\n\nBack to menu enter 'm':-->");
+	scanf("%s",&b);
+	if(b=='m'){
+        goto top;
+	}
+}
+// To quit the programem
+	else{
+		printf("Thank you!");
+	
+		printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tCreated by-->Maduranga");
+
+	}
+	
+	return 0;
+}
